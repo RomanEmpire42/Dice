@@ -3,7 +3,8 @@
     size(500, 500);
     noLoop();
   }
-  int total;
+  int total = 0;
+  int highscore = 0;
   void draw()
   {
       background(0, 0, 0);
@@ -21,8 +22,12 @@
         aDie.show();
         thisX++;
       }
+      if(total > highscore){
+        highscore = total;
+      }
       fill(255, 255, 0);
       text("total: " + total, 220, 450);
+      text("highscore: " + highscore, 220, 475);
   }
   void mousePressed()
   {
