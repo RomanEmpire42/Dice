@@ -2,6 +2,8 @@
   {
     size(500, 500);
     noLoop();
+    //when you comment out noLoop(); it looks very pretty.
+    //watching the highscore increase is fun too!
   }
   int total = 0;
   int highscore = 0;
