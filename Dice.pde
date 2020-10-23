@@ -6,20 +6,22 @@
   int total;
   void draw()
   {
-      background(50, 150, 250);
+      background(0, 0, 0);
       fill(0, 0, 0);
       total = 0;
-      int thisX = 1;
-      int thisY = 1;
-      for(int i = 0; i < 9; i++){
-        if(thisX >= 4){
+      int thisX = 0;
+      int thisY = 0;
+      double die = (double)(Math.random()*25);
+      for(int i = 0; i < die; i++){
+        if(thisX >= Math.sqrt(die)){
           thisY++;
-          thisX = 1;
+          thisX = 0;
         }
-        Die aDie = new Die(100 * thisX, 100 * thisY, 1);
+        Die aDie = new Die(104 * thisX, 104 * thisY, 1);
         aDie.show();
         thisX++;
       }
+      fill(255, 255, 0);
       text("total: " + total, 220, 450);
   }
   void mousePressed()
@@ -48,7 +50,7 @@
       }
       void show()
       {
-        fill(255, 255, 255);
+        fill(255, 0, 0);
         square(myX, myY, (int)(100 / size));
         fill(0, 0, 0);
         if(number == 3 || number == 4 || number == 5){
